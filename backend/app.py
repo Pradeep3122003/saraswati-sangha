@@ -18,7 +18,9 @@ def create_app(config_class=Config):
         db.create_all()
 
     from routes.auth_manage import auth_bp
+    from routes.org import org_bp
     app.register_blueprint(auth_bp)
+    app.register_blueprint(org_bp)
     return app
 
 if __name__=="__main__":
