@@ -11,7 +11,7 @@ org_bp=Blueprint('org',__name__,url_prefix="/api/v1")
 @org_bp.route("/group",methods=["GET"])
 @jwt_required()
 def group():
- data=get_jwt_identity
+ data=get_jwt_identity()
  data=json.loads(data)
 
  userid=data["mid"]

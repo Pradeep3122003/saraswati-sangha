@@ -20,3 +20,6 @@ def verify_password(provided_password, stored_hash):
     except Exception as e:
         print (e)
         return False
+
+
+print(hash_password("abcd1234"))
