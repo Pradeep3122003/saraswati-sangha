@@ -50,3 +50,12 @@ class Transaction(db.Model):
   amount=db.Column(db.JSONB)
   def __repr__(self):
         return f'<Loan {self.lid}>'
+
+class Login(db.Model):
+  __tablename__='login'
+  no=db.Column(db.Integer, primary_key=True)
+  mid=db.Column(db.String(32))
+  mobile=db.Column(db.String(10))
+  password=db.Column(db.String(200))
+  def __repr__(self):
+        return f'<Loan {self.lid}>'
