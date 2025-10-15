@@ -27,4 +27,8 @@ def group():
  if not group:
   return jsonify({"success":False,"message":"something went wrong"}), 503
 
- return jsonify({"success":True,"message":"group info", "year":group.year, "members":group.members, "turnover": group.turnover, "profit":group.profit, "loanq":group.loanq, "meeting":group.meeting}), 200
+ profile=Member.query.get(group.loanq)
+ if not profile:
+  return jsonify({"success":False,"message":"something went wrong"}), 400
+
+ return jsonify({"success":True,"message":"group info", "year":group.year, "members":group.members, "turnover": group.turnover, "profit":group.profit, "loanq":profile.name, "meeting":group.meeting}), 200
