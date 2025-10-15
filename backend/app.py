@@ -19,8 +19,12 @@ def create_app(config_class=Config):
 
     from routes.auth_manage import auth_bp
     from routes.org import org_bp
+    from routes.profile import profile_bp
+    from routes.loan import loan_bp
     app.register_blueprint(auth_bp)
     app.register_blueprint(org_bp)
+    app.register_blueprint(profile_bp)
+    app.register_blueprint(loan_bp)
     return app
 
 if __name__=="__main__":
