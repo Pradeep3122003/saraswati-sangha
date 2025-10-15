@@ -43,11 +43,11 @@ class Loan(db.Model):
         return f'<Loan {self.lid}>'
 
 class Transaction(db.Model):
-  __tablename__='loan'
+  __tablename__='transaction'
   mid=db.Column(db.String(32))
   tid=db.Column(db.String(64), primary_key=True)
   date=db.Column(db.Date)
-  amount=db.Column(db.JSONB)
+  amount=db.Column(JSONB)
   def __repr__(self):
         return f'<Loan {self.lid}>'
 
