@@ -14,7 +14,7 @@ def group():
  data=get_jwt_identity()
  data=json.loads(data)
 
- userid=data["mid"]
+ userid=data["userid"]
 
  if not userid or len(userid) != 32:
   return jsonify({"success":False,"message":"unauthorized access"}), 400
